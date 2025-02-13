@@ -1,54 +1,75 @@
-// ITERATIVE QUICK SORT 
-#include <iostream> 
+#include <iostream>
+#include <cstdlib>
 #include <stack>
 using namespace std;
-int partition(int arr[], int low, int high) 
-{ 
-    int x = arr[high]; 
-    int i = (low - 1); 
 
-    for (int j = low; j <= high - 1; j++) { 
-        if (arr[j] <= x) { 
-            i++; 
-            swap(arr[i], arr[j]); 
-        } 
-    } 
-    swap(arr[i + 1], arr[high]);
-    return (i + 1); 
-} 
-void quicksort(int arr[], int low, int high) 
-{ 
-    int stack[high - low + 1];
-    int top = -1; 
-    stack[++top] = low; 
-    stack[++top] = high; 
+int partition(int arr[], int low, int high)
+{
+    int pivot=arr[low];
+    int i=low+1;
+    int j=high;
 
-    while (top >= 0) { 
-        high = stack[top--]; 
-        low = stack[top--]; 
+    while(i<=j)
+    {
+        while(i<=j && arr[i]<=pivot) i++;
+        while(i<=j && arr[j] >pivot) j--;
+        if (i<j) {
+            swap(arr[i], arr[j]);
+    }
+}
 
-        int p = partition(arr, low,high); 
-        if (p - 1 > low) { 
-            stack[++top] = low; 
-            stack[++top] = p - 1; 
-        } 
-        if (p + 1 < high) { 
-            stack[++top] = p + 1; 
-            stack[++top] = high; 
-        } 
-    } 
-} 
-void print(int arr[], int n) 
-{ 
-    int i; 
-    for (i = 0; i < n; ++i) 
-        cout << arr[i] << " "; 
-} 
-int main() 
-{ 
-    int arr[] = { 4, 3, 5, 2, 1, 3, 2, 3 }; 
-    int n = sizeof(arr) / sizeof(*arr); 
-    quicksort(arr, 0, n - 1); 
-    print(arr, n); 
-    return 0; 
+    swap(arr[low], arr[j]);
+    return j;
+}
+
+void QSI(int arr[], int low, int high)
+{
+    stack <int> st;
+    do
+    {
+        while(low<high)
+        {
+            int j= partition(arr,low,high);
+            if((j-low)<(high-j))
+            {
+                st.push(j+1);
+                st.push(high);
+                high=j-1;
+            }
+            else
+            {
+                st.push(low);
+                st.push(j-1);
+                low=j+1;
+            }
+        }
+        if (st.empty()) return;
+        else
+        {
+            high=st.top();
+            st.pop();
+            low=st.top();
+            st.pop();
+        }
+    } while (true);
+}
+
+int main()
+{
+    int n;
+    cout<<"Enter size: ";
+    cin>>n;
+    cout<<"Enter elements: ";
+    int arr[n];
+    for(int i=0;i<n;i++)
+    {
+        cin>>arr[i];
+    }
+QSI(arr,0,n-1);
+cout<<"Sorted list: ";
+    for(int i=0;i<n;i++)
+    {
+        cout<<arr[i]<<" ";
+    }
+    return 0;
 }
