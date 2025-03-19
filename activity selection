@@ -1,0 +1,38 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+struct Activity
+{
+    float start, end;
+};
+
+bool compare(Activity a, Activity b)
+{
+    return a.end < b.end;
+}
+
+float activitySelection(vector<Activity> &activities) 
+{
+    sort(activities.begin(), activities.end(), compare);
+    float ans = 0, finish = -1;
+    for (int i = 0; i < activities.size(); i++)
+{
+        if (activities[i].start >= finish) 
+ {
+            finish = activities[i].end;
+            ans++;
+            cout << activities[i].start << " " << activities[i].end << endl;
+        }
+    }
+    cout << "Number of activities possible = " << ans << endl;
+    return ans;
+}
+
+int main()
+{
+    vector<Activity> activities = { {5, 8}, {8, 13}, {12, 14}, {15, 16}, {16, 17} };
+    activitySelection(activities);
+    return 0;
+}
