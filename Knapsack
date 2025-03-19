@@ -1,0 +1,79 @@
+#include <iostream>
+using namespace std;
+
+class Item {
+public:
+    string name;
+    float value;
+    float weight;
+
+    Item(string n, float v, float w) {
+        name = n;
+        value = v;
+        weight = w;
+    }
+
+    float ratio() {
+        return value / weight;
+    }
+};
+
+void sortItems(Item arr[], int n) {
+    for (int i = 0; i < n - 1; i++) {
+        for (int j = i + 1; j < n; j++) {
+            if (arr[i].ratio() < arr[j].ratio()) {
+                Item temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+        }
+    }
+}
+
+int main() {
+    int n;
+    cout << "Enter number of items: ";
+    cin >> n;
+
+    Item items[n];
+
+    cout << "Enter name, value, weight for each item:\n";
+    for (int i = 0; i < n; i++) {
+        string name;
+        float value, weight;
+        cin >> name >> value >> weight;
+        items[i] = Item(name, value, weight);
+    }
+
+    sortItems(items, n);
+
+    cout << "\nItems sorted by value-to-weight ratio:\n";
+    for (int i = 0; i < n; i++) {
+        cout << items[i].name << " " << items[i].value << " " << items[i].weight << " (Ratio: " << items[i].ratio() << ")\n";
+    }
+
+    float capacity;
+    cout << "\nEnter the capacity of the knapsack: ";
+    cin >> capacity;
+
+    float totalValue = 0.0;
+    cout << "\nItems taken into the knapsack:\n";
+
+    for (int i = 0; i < n; i++) {
+        if (capacity >= items[i].weight) {
+            totalValue += items[i].value;
+            capacity -= items[i].weight;
+            cout << items[i].name << " fully taken\n";
+        } else {
+            float fractionLeft = float(capacity) / items[i].weight;
+            totalValue += items[i].value * fractionLeft;
+            cout << items[i].name << " partially taken (" << (capacity / items[i].weight) * 100 << "%)\n";
+            break;
+        }
+        if (capacity == 0) break;
+    }
+
+    cout << "\nMaximum value in the knapsack: " << totalValue << endl;
+
+    return 0;
+}
