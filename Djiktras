@@ -1,0 +1,75 @@
+#include <iostream>
+#include <climits>
+using namespace std;
+int cost[4][4]={{0, 8, 3, 0}, {0, 0, 0, 6}, {0, 5, 0, 7}, {0, 0, 0, 0}};
+int dist[4]={INT_MAX, INT_MAX, INT_MAX, INT_MAX};
+int v=0, n=4, path[5]={0}, index=0;
+bool visited[4]= {false, false, false, false};
+
+int findMinDist(int dist[], bool visited[])
+{
+    int min=INT_MAX, minIdx=-1;
+    for(int i=0;i<n;i++)
+    {
+        if (!visited[i] && dist[i]<min)
+        {
+            min=dist[i];
+            minIdx=i;
+        }
+    }
+    return minIdx;
+}
+
+void dijkstra(int v, int cost[4][4], int n, int dist[]) {
+    for (int i=0;i<n;i++) 
+    {
+        if (cost[v][i]!=0) 
+        {
+            dist[i]=cost[v][i];
+        }
+        else 
+        {
+            dist[i]=INT_MAX;
+        }
+        visited[i]= false;
+    }
+    visited[v]= true;
+    dist[v]= 0;
+    path[index++]= v;
+
+    for(int i=1;i<n;i++)
+    {
+        int u= findMinDist(dist, visited);
+        if (!visited[u])
+        {
+            visited[u]= true;
+            path[index++]= u;
+            for (int w=0 ;w<n;w++)
+            {
+                if (cost[u][w]!=0 && !visited[w] && dist[u]!=INT_MAX) 
+                {
+                    if (dist[w]>dist[u] + cost[u][w])
+                    {
+                        dist[w]= dist[u] + cost[u][w];
+                    }
+                }
+            }
+        }
+    }
+    for (int i=0;i<n;i++) 
+    {
+        if (dist[i]==INT_MAX) 
+        {
+            cout << v << " to " << i << " = " << -1 << endl;
+        } 
+        else 
+        {
+            cout << v << " to " << i << " = " << dist[i] << endl;
+        }
+    }
+}
+
+int main() {
+    dijkstra(v, cost, n, dist);
+    return 0;
+}
