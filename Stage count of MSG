@@ -5,7 +5,7 @@ using namespace std;
 #define inf INT_MAX
 int calculatestage (int cost[n][n])
 {
-    int stages;
+    int stages=1;
     int node=0;
     while (node!=n-1)
     {
