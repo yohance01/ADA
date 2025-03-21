@@ -20,7 +20,6 @@ int calculatestage (int cost[n][n])
         }
     }
     return stages;
-    stages=stages+1;
 }
 int main ()
 {
