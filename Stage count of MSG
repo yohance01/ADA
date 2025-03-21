@@ -1,0 +1,42 @@
+#include<iostream>
+#include<climits>
+using namespace std;
+#define n 8
+#define inf INT_MAX
+int calculatestage (int cost[n][n])
+{
+    int stages;
+    int node=0;
+    while (node!=n-1)
+    {
+        for(int j = node+1;j<n;j++)
+        {
+            if (cost[node][j]!=inf)
+            {
+                node=j;
+                stages++;
+                break;
+            }
+        }
+    }
+    return stages;
+    stages=stages+1;
+}
+int main ()
+{
+    int cost[n][n]=
+          // 0 , 1 , 2 , 3 , 4 ,  5 , 6 , 7 
+    {
+       /*0*/ {inf,3 , 4 , 2,inf,inf,inf,inf,},
+       /*1*/ {inf,inf,inf,inf, 6 ,8,inf,inf},
+       /*2*/ {inf,inf,inf,inf,5 ,inf,7 ,inf},
+       /*3*/ {inf,inf,inf,inf,inf,1, 4,inf},
+       /*4*/ {inf,inf,inf,inf,inf,inf,inf,10},
+       /*5*/ {inf,inf,inf,inf,inf,inf,inf,11},
+       /*6*/ {inf,inf,inf,inf,inf,inf,inf,12},
+       /*7*/ {inf,inf,inf,inf,inf,inf,inf,inf}
+    };
+    int K = calculatestage(cost);
+    cout<<K;
+    return 0;
+}
