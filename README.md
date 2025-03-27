@@ -16,7 +16,7 @@ This repository contains various algorithms implemented in C++ along with their 
 **Aim:** To analyze the time complexity of the Selection Sort algorithm in best, worst, and average cases and understand its efficiency.  
 **Description:** Selection Sort repeatedly finds the minimum element from the unsorted part and moves it to the beginning, leading to an O(n²) time complexity.  
 
-![Selection Sort](selection sort.png)
+![Selection Sort](selectionsort.png)
 
 ---
 
@@ -25,10 +25,10 @@ This repository contains various algorithms implemented in C++ along with their 
 **Description:** Quick Sort is an efficient divide-and-conquer sorting algorithm that selects a pivot, partitions elements, and recursively sorts subarrays.  
 
 **Best & Average Case:**  
-![Quick Sort](best avg quick sort.png)  
+![Quick Sort](bestavgquicksort.png)  
 
 **Worst Case:**  
-![Quick Sort](worst quick sort.png)  
+![Quick Sort](worstquicksort.png)  
 
 ---
 
@@ -37,10 +37,10 @@ This repository contains various algorithms implemented in C++ along with their 
 **Description:** Bubble Sort repeatedly swaps adjacent elements if they are in the wrong order, leading to an O(n²) time complexity in the worst case.  
 
 **Average & Worst Case:**  
-![Bubble Sort](best bubble sort.png)  
+![Bubble Sort](avgandworstbubblesort.png)  
 
 **Best Case:**  
-![Bubble Sort](avg and worst bubble sort.png)  
+![Bubble Sort](bestbubblesort.png)  
 
 ---
 
@@ -64,7 +64,7 @@ This repository contains various algorithms implemented in C++ along with their 
 **Aim:** To implement Binary Search and analyze its efficiency in searching sorted data.  
 **Description:** Binary Search is a logarithmic search algorithm that repeatedly divides the search space in half, achieving O(log n) time complexity.  
 
-![Binary Search](bin search.png)
+![Binary Search](binsearch.png)
 
 ---
 
@@ -88,7 +88,7 @@ This repository contains various algorithms implemented in C++ along with their 
 **Aim:** To understand and visualize the recursive stack behavior of Quick Sort.  
 **Description:** This visualizes the recursive function calls in Quick Sort to understand the depth of recursion and stack usage.  
 
-![Stack Calls](stack calls.png)
+![Stack Calls](stackcalls.png)
 
 ---
 
@@ -96,7 +96,7 @@ This repository contains various algorithms implemented in C++ along with their 
 **Aim:** To generate a magic square.  
 **Description:** A magic square is a grid of distinct numbers where row, column, and diagonal sums are equal.  
 
-![Magic Square](magic sq.png)
+![Magic Square](magicsq.png)
 
 ---
 
@@ -104,7 +104,7 @@ This repository contains various algorithms implemented in C++ along with their 
 **Aim:** To implement matrix multiplication using the brute force approach.  
 **Description:** Standard O(n³) matrix multiplication using three nested loops.  
 
-![Matrix Multiplication](matrix mul brute.png)
+![Matrix Multiplication](matrixmulbrute.png)
 
 ---
 
@@ -112,7 +112,7 @@ This repository contains various algorithms implemented in C++ along with their 
 **Aim:** To implement matrix multiplication using the divide and conquer approach.  
 **Description:** This method recursively breaks matrices into smaller blocks for multiplication.  
 
-![Matrix Multiplication](matrix mul dac.png)
+![Matrix Multiplication](matrixmuldac.png)
 
 ---
 
@@ -120,7 +120,7 @@ This repository contains various algorithms implemented in C++ along with their 
 **Aim:** To implement matrix multiplication using Strassen’s approach.  
 **Description:** Strassen’s method reduces the number of multiplications to improve efficiency.  
 
-![Matrix Multiplication](matrix mul strassen.png)
+![Matrix Multiplication](matrixmulstrassen.png)
 
 ---
 
