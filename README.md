@@ -8,7 +8,7 @@ This repository contains various algorithms implemented in C++ along with their 
 **Aim:** To analyze the time complexity of the Merge Sort algorithm in best, worst, and average cases and understand its efficiency.  
 **Description:** Merge Sort is a divide-and-conquer algorithm that splits the array into halves, recursively sorts them, and merges them back together efficiently.  
 
-![Merge Sort](merge sort.png)
+![Merge Sort](mergesort.png)
 
 ---
 
