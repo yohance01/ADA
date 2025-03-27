@@ -1,4 +1,4 @@
-# Algorithm Analysis and Complexity Visualization
+# Analysis and Design of Algorithm
 
 This repository contains various algorithms implemented in C++ along with their corresponding time complexity graphs.
 
