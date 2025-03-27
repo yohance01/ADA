@@ -37,10 +37,10 @@ This repository contains various algorithms implemented in C++ along with their 
 **Description:** Bubble Sort repeatedly swaps adjacent elements if they are in the wrong order, leading to an O(n²) time complexity in the worst case.  
 
 **Average & Worst Case:**  
-![Bubble Sort](bubble sort (avg and worst).png)  
+![Bubble Sort](best bubble sort.png)  
 
 **Best Case:**  
-![Bubble Sort](bubble sort (best).png)  
+![Bubble Sort](avg and worst bubble sort.png)  
 
 ---
 
