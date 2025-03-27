@@ -48,7 +48,7 @@ This repository contains various algorithms implemented in C++ along with their 
 **Aim:** To implement and analyze algorithms that find a peak element in a one-dimensional array.  
 **Description:** A peak element is an element greater than or equal to its neighbors. The algorithm finds a peak efficiently in O(log n) time.  
 
-![1D Peak Finding](1d peak.png)
+![1D Peak Finding](1d.png)
 
 ---
 
@@ -56,7 +56,7 @@ This repository contains various algorithms implemented in C++ along with their 
 **Aim:** To implement and analyze algorithms that find a peak element in a two-dimensional array.  
 **Description:** This algorithm extends 1D peak finding to 2D matrices, finding an element that is greater than or equal to its adjacent elements.  
 
-![2D Peak Finding](2d peak.png)
+![2D Peak Finding](2d.png)
 
 ---
 
